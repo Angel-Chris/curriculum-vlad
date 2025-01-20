@@ -65,8 +65,15 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: none;
     justify-content: center;
+    background-color: #333;
+    color: white;
+}
+
+/* NAV UL.ACTIVE */
+nav ul.active {
+    display: flex; /*Mostra il menu come un layout flessibile*/
 }
 
 /* NAV UL LI */
@@ -82,6 +89,7 @@ nav ul li a {
     border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
+    display: block;
 }
 
 nav ul li a::after {
@@ -98,10 +106,39 @@ nav ul li a::after {
 
 nav ul li a:hover {
     color: #bb86fc;
+    background-color: #555;
 }
 
 nav ul li a:hover::after {
     transform: scaleX(1);
+}
+
+/* MENU TOGGLE */
+#menu-toggle {
+    font-size: 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* MENU-TOGGLE:hover */
+#menu-toggle:hover {
+    background-color: #666;
+}
+
+/* @media */
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
 }
 
 /* MAIN CONTENT */
